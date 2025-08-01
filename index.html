@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia Marítimo - Sua Aventura no Mar</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .wave-animation {
+            background: linear-gradient(45deg, #0ea5e9, #06b6d4, #0891b2);
+            background-size: 400% 400%;
+            animation: wave 3s ease-in-out infinite;
+        }
+        
+        @keyframes wave {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+        
+        .boat-float {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .fade-in {
+            animation: fadeIn 1s ease-in;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-b from-sky-100 to-blue-50 min-h-screen">
+    <!-- Header -->
+    <header class="wave-animation text-white py-6 shadow-lg">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-3">
+                    <div class="text-4xl boat-float">⛵</div>
+                    <h1 class="text-3xl font-bold">Guia Marítimo</h1>
+                </div>
+                <nav class="hidden md:flex space-x-6">
+                    <a href="#destinos" class="hover:text-blue-200 transition-colors">Destinos</a>
+                    <a href="#dicas" class="hover:text-blue-200 transition-colors">Dicas</a>
+                    <a href="#equipamentos" class="hover:text-blue-200 transition-colors">Equipamentos</a>
+                    <a href="#contato" class="hover:text-blue-200 transition-colors">Contato</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="py-16 px-4">
+        <div class="container mx-auto text-center">
+            <div class="fade-in">
+                <h2 class="text-5xl font-bold text-blue-900 mb-6">Descubra o Mar</h2>
+                <p class="text-xl text-blue-700 mb-8 max-w-2xl mx-auto">
+                    Embarque na aventura perfeita! Seu guia completo para viagens de barco inesquecíveis.
+                </p>
+                <button onclick="scrollToSection('destinos')" class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-full text-lg font-semibold transition-all transform hover:scale-105 shadow-lg">
+                    🌊 Explorar Destinos
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Destinos Section -->
+    <section id="destinos" class="py-16 px-4 bg-white">
+        <div class="container mx-auto">
+            <h3 class="text-4xl font-bold text-center text-blue-900 mb-12">🏝 Destinos Imperdíveis</h3>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="text-6xl mb-4">🏖</div>
+                    <h4 class="text-2xl font-bold text-blue-800 mb-3">Ilhas Paradisíacas</h4>
+                    <p class="text-blue-600 mb-4">Explore ilhas cristalinas com águas transparentes e praias de areia branca.</p>
+                    <ul class="text-sm text-blue-700 space-y-1">
+                        <li>• Mergulho em recifes de coral</li>
+                        <li>• Pesca esportiva</li>
+                        <li>• Relaxamento em praias desertas</li>
+                    </ul>
+                </div>
+                
+                <div class="bg-gradient-to-br from-green-50 to-emerald-50 rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="text-6xl mb-4">🐋</div>
+                    <h4 class="text-2xl font-bold text-green-800 mb-3">Observação de Baleias</h4>
+                    <p class="text-green-600 mb-4">Temporada de julho a novembro para avistar baleias jubarte.</p>
+                    <ul class="text-sm text-green-700 space-y-1">
+                        <li>• Melhor época: Agosto-Outubro</li>
+                        <li>• Saídas pela manhã</li>
+                        <li>• Guias especializados</li>
+                    </ul>
+                </div>
+                
+                <div class="bg-gradient-to-br from-orange-50 to-red-50 rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="text-6xl mb-4">🌅</div>
+                    <h4 class="text-2xl font-bold text-orange-800 mb-3">Pôr do Sol no Mar</h4>
+                    <p class="text-orange-600 mb-4">Passeios românticos com vista espetacular do pôr do sol.</p>
+                    <ul class="text-sm text-orange-700 space-y-1">
+                        <li>• Duração: 3-4 horas</li>
+                        <li>• Inclui aperitivos</li>
+                        <li>• Música ambiente</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dicas Section -->
+    <section id="dicas" class="py-16 px-4 bg-blue-50">
+        <div class="container mx-auto">
+            <h3 class="text-4xl font-bold text-center text-blue-900 mb-12">💡 Dicas Essenciais</h3>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-white rounded-xl p-8 shadow-lg">
+                    <h4 class="text-2xl font-bold text-blue-800 mb-6 flex items-center">
+                        <span class="text-3xl mr-3">🧳</span>
+                        O que Levar
+                    </h4>
+                    <div class="space-y-3">
+                        <div class="flex items-center space-x-3">
+                            <span class="text-green-500 text-xl">✓</span>
+                            <span class="text-blue-700">Protetor solar FPS 50+</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <span class="text-green-500 text-xl">✓</span>
+                            <span class="text-blue-700">Chapéu ou boné</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <span class="text-green-500 text-xl">✓</span>
+                            <span class="text-blue-700">Óculos de sol</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <span class="text-green-500 text-xl">✓</span>
+                            <span class="text-blue-700">Roupa de banho extra</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <span class="text-green-500 text-xl">✓</span>
+                            <span class="text-blue-700">Toalha de secagem rápida</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <span class="text-green-500 text-xl">✓</span>
+                            <span class="text-blue-700">Medicamento para enjoo</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl p-8 shadow-lg">
+                    <h4 class="text-2xl font-bold text-blue-800 mb-6 flex items-center">
+                        <span class="text-3xl mr-3">⚠</span>
+                        Segurança no Mar
+                    </h4>
+                    <div class="space-y-4">
+                        <div class="bg-yellow-50 p-4 rounded-lg border-l-4 border-yellow-400">
+                            <p class="text-yellow-800 font-semibold">Sempre use colete salva-vidas</p>
+                        </div>
+                        <div class="bg-red-50 p-4 rounded-lg border-l-4 border-red-400">
+                            <p class="text-red-800 font-semibold">Verifique as condições climáticas</p>
+                        </div>
+                        <div class="bg-blue-50 p-4 rounded-lg border-l-4 border-blue-400">
+                            <p class="text-blue-800 font-semibold">Mantenha-se hidratado</p>
+                        </div>
+                        <div class="bg-green-50 p-4 rounded-lg border-l-4 border-green-400">
+                            <p class="text-green-800 font-semibold">Siga as instruções da tripulação</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Equipamentos Section -->
+    <section id="equipamentos" class="py-16 px-4 bg-white">
+        <div class="container mx-auto">
+            <h3 class="text-4xl font-bold text-center text-blue-900 mb-12">⚓ Tipos de Embarcação</h3>
+            <div class="grid md:grid-cols-4 gap-6">
+                <div class="text-center bg-blue-50 rounded-xl p-6 hover:bg-blue-100 transition-colors">
+                    <div class="text-5xl mb-4">🛥</div>
+                    <h4 class="text-lg font-bold text-blue-800 mb-2">Lancha</h4>
+                    <p class="text-sm text-blue-600">Rápida e confortável para passeios de dia</p>
+                </div>
+                
+                <div class="text-center bg-green-50 rounded-xl p-6 hover:bg-green-100 transition-colors">
+                    <div class="text-5xl mb-4">⛵</div>
+                    <h4 class="text-lg font-bold text-green-800 mb-2">Veleiro</h4>
+                    <p class="text-sm text-green-600">Experiência autêntica com o vento</p>
+                </div>
+                
+                <div class="text-center bg-purple-50 rounded-xl p-6 hover:bg-purple-100 transition-colors">
+                    <div class="text-5xl mb-4">🚤</div>
+                    <h4 class="text-lg font-bold text-purple-800 mb-2">Jet Boat</h4>
+                    <p class="text-sm text-purple-600">Adrenalina e velocidade</p>
+                </div>
+                
+                <div class="text-center bg-orange-50 rounded-xl p-6 hover:bg-orange-100 transition-colors">
+                    <div class="text-5xl mb-4">🛳</div>
+                    <h4 class="text-lg font-bold text-orange-800 mb-2">Catamarã</h4>
+                    <p class="text-sm text-orange-600">Estabilidade e espaço para grupos</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Preços Section -->
+    <section class="py-16 px-4 bg-gradient-to-r from-blue-600 to-cyan-600 text-white">
+        <div class="container mx-auto">
+            <h3 class="text-4xl font-bold text-center mb-12">💰 Pacotes e Preços</h3>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white bg-opacity-10 backdrop-blur-sm rounded-xl p-8 text-center hover:bg-opacity-20 transition-all">
+                    <h4 class="text-2xl font-bold mb-4">🌊 Básico</h4>
+                    <div class="text-4xl font-bold mb-4">R$ 150</div>
+                    <p class="mb-6">Por pessoa - 4 horas</p>
+                    <ul class="text-left space-y-2 mb-6">
+                        <li>• Passeio costeiro</li>
+                        <li>• Equipamentos de segurança</li>
+                        <li>• Água e frutas</li>
+                    </ul>
+                    <button class="bg-white text-blue-600 px-6 py-3 rounded-full font-semibold hover:bg-blue-50 transition-colors">
+                        Reservar Agora
+                    </button>
+                </div>
+                
+                <div class="bg-white bg-opacity-20 backdrop-blur-sm rounded-xl p-8 text-center border-2 border-white transform scale-105 hover:bg-opacity-30 transition-all">
+                    <div class="bg-yellow-400 text-yellow-900 px-3 py-1 rounded-full text-sm font-bold mb-4">POPULAR</div>
+                    <h4 class="text-2xl font-bold mb-4">🏝 Completo</h4>
+                    <div class="text-4xl font-bold mb-4">R$ 280</div>
+                    <p class="mb-6">Por pessoa - 8 horas</p>
+                    <ul class="text-left space-y-2 mb-6">
+                        <li>• Visita a ilhas</li>
+                        <li>• Almoço incluído</li>
+                        <li>• Equipamentos de mergulho</li>
+                        <li>• Guia especializado</li>
+                    </ul>
+                    <button class="bg-yellow-400 text-yellow-900 px-6 py-3 rounded-full font-semibold hover:bg-yellow-300 transition-colors">
+                        Reservar Agora
+                    </button>
+                </div>
+                
+                <div class="bg-white bg-opacity-10 backdrop-blur-sm rounded-xl p-8 text-center hover:bg-opacity-20 transition-all">
+                    <h4 class="text-2xl font-bold mb-4">🌅 Premium</h4>
+                    <div class="text-4xl font-bold mb-4">R$ 450</div>
+                    <p class="mb-6">Por pessoa - 12 horas</p>
+                    <ul class="text-left space-y-2 mb-6">
+                        <li>• Pôr do sol exclusivo</li>
+                        <li>• Jantar gourmet</li>
+                        <li>• Bar aberto</li>
+                        <li>• Música ao vivo</li>
+                    </ul>
+                    <button class="bg-white text-blue-600 px-6 py-3 rounded-full font-semibold hover:bg-blue-50 transition-colors">
+                        Reservar Agora
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contato Section -->
+    <section id="contato" class="py-16 px-4 bg-blue-50">
+        <div class="container mx-auto">
+            <h3 class="text-4xl font-bold text-center text-blue-900 mb-12">📞 Entre em Contato</h3>
+            <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-8">
+                <div class="bg-white rounded-xl p-8 shadow-lg">
+                    <h4 class="text-2xl font-bold text-blue-800 mb-6">Informações de Contato</h4>
+                    <div class="space-y-4">
+                        <div class="flex items-center space-x-4">
+                            <div class="text-2xl">📱</div>
+                            <div>
+                                <p class="font-semibold text-blue-800">WhatsApp</p>
+                                <p class="text-blue-600">(11) 99999-9999</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <div class="text-2xl">📧</div>
+                            <div>
+                                <p class="font-semibold text-blue-800">Email</p>
+                                <p class="text-blue-600">contato@guiamaritimo.com</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <div class="text-2xl">📍</div>
+                            <div>
+                                <p class="font-semibold text-blue-800">Localização</p>
+                                <p class="text-blue-600">Marina da Glória, Rio de Janeiro</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <div class="text-2xl">🕒</div>
+                            <div>
+                                <p class="font-semibold text-blue-800">Horário</p>
+                                <p class="text-blue-600">Todos os dias, 7h às 18h</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl p-8 shadow-lg">
+                    <h4 class="text-2xl font-bold text-blue-800 mb-6">Formulário de Contato</h4>
+                    <p class="text-sm text-gray-600 mb-4 bg-yellow-50 p-3 rounded border-l-4 border-yellow-400">
+                        <strong>Demo:</strong> Este é um formulário de demonstração. Em um site real, seria necessário configurar um backend para processar os dados.
+                    </p>
+                    <form class="space-y-4">
+                        <div>
+                            <label class="block text-blue-800 font-semibold mb-2">Nome</label>
+                            <input type="text" class="w-full px-4 py-3 border border-blue-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Seu nome completo">
+                        </div>
+                        <div>
+                            <label class="block text-blue-800 font-semibold mb-2">Email</label>
+                            <input type="email" class="w-full px-4 py-3 border border-blue-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="seu@email.com">
+                        </div>
+                        <div>
+                            <label class="block text-blue-800 font-semibold mb-2">Mensagem</label>
+                            <textarea rows="4" class="w-full px-4 py-3 border border-blue-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Como podemos ajudar você?"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-lg font-semibold transition-colors">
+                            Enviar Mensagem
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-blue-900 text-white py-8">
+        <div class="container mx-auto px-4 text-center">
+            <div class="flex items-center justify-center space-x-3 mb-4">
+                <div class="text-3xl boat-float">⛵</div>
+                <h5 class="text-2xl font-bold">Guia Marítimo</h5>
+            </div>
+            <p class="text-blue-200 mb-4">Sua aventura no mar começa aqui!</p>
+            <div class="flex justify-center space-x-6 text-2xl">
+                <span>🌊</span>
+                <span>⚓</span>
+                <span>🐠</span>
+                <span>🏝</span>
+                <span>🌅</span>
+            </div>
+            <p class="text-blue-300 text-sm mt-4">© 2024 Guia Marítimo. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        function scrollToSection(sectionId) {
+            document.getElementById(sectionId).scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+
+        // Adicionar efeito de fade-in aos elementos quando aparecem na tela
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        }, observerOptions);
+
+        // Observar todas as seções
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
+
+        // Funcionalidade do formulário (demo)
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Obrigado pelo seu interesse! Em um site real, sua mensagem seria enviada para nossa equipe.');
+        });
+
+        // Funcionalidade dos botões de reserva (demo)
+        document.querySelectorAll('button').forEach(button => {
+            if (button.textContent.includes('Reservar')) {
+                button.addEventListener('click', function() {
+                    alert('Redirecionando para o sistema de reservas... (Esta é uma demonstração)'
