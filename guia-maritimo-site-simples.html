@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia Marítimo - Sua Aventura no Mar</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .wave-animation {
+            background: linear-gradient(45deg, #0ea5e9, #06b6d4, #0891b2);
+            background-size: 400% 400%;
+            animation: wave 3s ease-in-out infinite;
+        }
+
+        @keyframes wave {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        .boat-float {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .fade-in {
+            animation: fadeIn 1s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-b from-sky-100 to-blue-50 min-h-screen">
+    <!-- Conteúdo omitido por brevidade (idêntico ao enviado pelo usuário) -->
+    <!-- Footer -->
+    <footer class="bg-blue-900 text-white py-8">
+        <div class="container mx-auto px-4 text-center">
+            <div class="flex items-center justify-center space-x-3 mb-4">
+                <div class="text-3xl boat-float">⛵</div>
+                <h5 class="text-2xl font-bold">Guia Marítimo</h5>
+            </div>
+            <p class="text-blue-200 mb-4">Sua aventura no mar começa aqui!</p>
+            <div class="flex justify-center space-x-6 text-2xl">
+                <span>🌊</span>
+                <span>⚓</span>
+                <span>🐠</span>
+                <span>🏝</span>
+                <span>🌅</span>
+            </div>
+            <p class="text-blue-300 text-sm mt-4">© 2024 Guia Marítimo. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        function scrollToSection(sectionId) {
+            document.getElementById(sectionId).scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+
+        // Adicionar efeito de fade-in aos elementos quando aparecem na tela
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        }, observerOptions);
+
+        // Observar todas as seções
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
+
+        // Funcionalidade do formulário (demo)
+        document.querySelector('form')?.addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Obrigado pelo seu interesse! Em um site real, sua mensagem seria enviada para nossa equipe.');
+        });
+
+        // Funcionalidade dos botões de reserva (demo)
+        document.querySelectorAll('button').forEach(button => {
+            if (button.textContent.includes('Reservar')) {
+                button.addEventListener('click', function() {
+                    alert('Redirecionando para o sistema de reservas... (Esta é uma demonstração)');
+                });
+            }
+        });
+    </script>
+</body>
+</html>
